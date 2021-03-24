@@ -187,7 +187,7 @@ class SlurmSqueueClient
 
     {
       procs_used:     sinfo_out[0].to_i,
-      procs_avail:    sinfo_out[3].to_i,
+      procs_avail:    sinfo_out[1].to_i,
       nodes_used:     sinfo_out[4].to_i,
       nodes_idle:     sinfo_out[5].to_i,
       nodes_avail:    sinfo_out[6].to_i,
