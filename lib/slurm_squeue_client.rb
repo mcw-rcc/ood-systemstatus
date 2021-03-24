@@ -77,7 +77,7 @@ class SlurmSqueueClient
   def sinfo
     return @sinfo if defined?(@sinfo)
 
-    args = ["-a", "-h", "-o=\"%C/%A/%D\""]
+    args = ["-a", "-h", "-o \"%C/%A/%D\""]
     args.push(cluster_args)
 
     o, e, s = Open3.capture3({}, sinfo_cmd, *args)
@@ -186,8 +186,8 @@ class SlurmSqueueClient
     }
 
     {
-      procs_used:     sinfo_out[0].to_i,
-      procs_avail:    sinfo_out[1].to_i,
+      procs_used:     sinfo_out[1].to_i,
+      procs_avail:    sinfo_out[3].to_i,
       nodes_used:     sinfo_out[4].to_i,
       nodes_idle:     sinfo_out[5].to_i,
       nodes_avail:    sinfo_out[6].to_i,
