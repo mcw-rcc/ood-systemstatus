@@ -7,7 +7,7 @@
       <a href="<%= url(cluster.dashboard_url) %>">
     <% end %>
       <div class="panel panel-default bs-callout bs-callout-info text-center <%= 'panel-clickable' if cluster.dashboard_url %>">
-        <h4><strong><%= cluster.cluster_title %> Cluster_Status</strong></h4>
+        <h4><strong><%= cluster.cluster_title %> Status</strong></h4>
         <%= erb :_node_status, :locals => { :showqer => cluster, :gpustats => @gpustats[index].setup } %>
       </div>
     <% if cluster.dashboard_url %>
